@@ -1,0 +1,2395 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[p mainexit ]
+"4 ./delay.h
+[; ;./delay.h: 4: void atraso_ms(unsigned int);
+[v _atraso_ms `(v ~T0 @X0 0 ef1`ui ]
+"25 ./lcd.h
+[; ;./lcd.h: 25: void lcdInit(void);
+[v _lcdInit `(v ~T0 @X0 0 ef ]
+"23
+[; ;./lcd.h: 23: void lcdCommand(unsigned char cmd);
+[v _lcdCommand `(v ~T0 @X0 0 ef1`uc ]
+"26
+[; ;./lcd.h: 26: void lcdPosition(unsigned char linha, unsigned char coluna);
+[v _lcdPosition `(v ~T0 @X0 0 ef2`uc`uc ]
+"39 C:\Program Files\Microchip\xc8\v2.32\pic\include\c99\string.h
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\c99\string.h: 39: int strcmp (const char *, const char *);
+[v _strcmp `(i ~T0 @X0 0 ef2`*Cuc`*Cuc ]
+"24 ./lcd.h
+[; ;./lcd.h: 24: void lcdData(unsigned char valor);
+[v _lcdData `(v ~T0 @X0 0 ef1`uc ]
+"20 newmain2.c
+[; ;newmain2.c: 20: void escolheComida(void);
+[v _escolheComida `(v ~T0 @X0 0 ef ]
+"21
+[; ;newmain2.c: 21: void abreTampa(void);
+[v _abreTampa `(v ~T0 @X0 0 ef ]
+"19
+[; ;newmain2.c: 19: void escolheTempo(void);
+[v _escolheTempo `(v ~T0 @X0 0 ef ]
+"25 ./keypad.h
+[; ;./keypad.h: 25:  void kpInit(void);
+[v _kpInit `(v ~T0 @X0 0 ef ]
+"23
+[; ;./keypad.h: 23:  unsigned int kpRead(void);
+[v _kpRead `(ui ~T0 @X0 0 ef ]
+"24
+[; ;./keypad.h: 24:  void kpDebounce(void);
+[v _kpDebounce `(v ~T0 @X0 0 ef ]
+"26 ./pwm.h
+[; ;./pwm.h: 26:  void pwmInit(void);
+[v _pwmInit `(v ~T0 @X0 0 ef ]
+"23
+[; ;./pwm.h: 23:  void pwmSet1(unsigned char porcento);
+[v _pwmSet1 `(v ~T0 @X0 0 ef1`uc ]
+"25
+[; ;./pwm.h: 25:  void pwmFrequency(unsigned int freq);
+[v _pwmFrequency `(v ~T0 @X0 0 ef1`ui ]
+"24 ./ssd.h
+[; ;./ssd.h: 24:  void ssdInit(void);
+[v _ssdInit `(v ~T0 @X0 0 ef ]
+"22
+[; ;./ssd.h: 22:  void ssdDigit(char val, char pos);
+[v _ssdDigit `(v ~T0 @X0 0 ef2`uc`uc ]
+"23
+[; ;./ssd.h: 23:  void ssdUpdate(void);
+[v _ssdUpdate `(v ~T0 @X0 0 ef ]
+"1922 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 1922: extern volatile unsigned char TRISC __attribute__((address(0xF94)));
+[v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
+"272
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 272: extern volatile unsigned char PORTB __attribute__((address(0xF81)));
+[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
+"633
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 633: extern volatile unsigned char PORTD __attribute__((address(0xF83)));
+[v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
+[v F2978 `(ui ~T0 @X0 0 tf ]
+"26 ./config.h
+[p x OSC=HS                   ]
+"27
+[p x FCMEN  =  OFF ]
+"28
+[p x IESO  =  OFF ]
+"29
+[p x PWRT  =  OFF ]
+"30
+[p x BOREN  =  OFF ]
+"31
+[p x BORV  =  46 ]
+"32
+[p x WDT=OFF                  ]
+"33
+[p x WDTPS  =  1                ]
+"34
+[p x MCLRE=ON                 ]
+"35
+[p x LPT1OSC  =  OFF ]
+"36
+[p x PBADEN  =  ON ]
+"37
+[p x CCP2MX  =  PORTC ]
+"38
+[p x STVREN  =  OFF ]
+"39
+[p x LVP=OFF                  ]
+"40
+[p x XINST  =  OFF ]
+"41
+[p x DEBUG  =  OFF              ]
+"43
+[p x CP0  =  OFF ]
+"44
+[p x CP1  =  OFF ]
+"45
+[p x CP2  =  OFF ]
+"46
+[p x CP3  =  OFF ]
+"47
+[p x CPB  =  OFF ]
+"48
+[p x CPD  =  OFF ]
+"50
+[p x WRT0  =  OFF ]
+"51
+[p x WRT1  =  OFF ]
+"52
+[p x WRT2  =  OFF ]
+"53
+[p x WRT3  =  OFF ]
+"54
+[p x WRTB  =  OFF ]
+"55
+[p x WRTC  =  OFF ]
+"56
+[p x WRTD  =  OFF ]
+"58
+[p x EBTR0  =  OFF ]
+"59
+[p x EBTR1  =  OFF ]
+"60
+[p x EBTR2  =  OFF ]
+"61
+[p x EBTR3  =  OFF ]
+"62
+[p x EBTRB  =  OFF ]
+"55 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 55: __asm("PORTA equ 0F80h");
+[; <" PORTA equ 0F80h ;# ">
+"274
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 274: __asm("PORTB equ 0F81h");
+[; <" PORTB equ 0F81h ;# ">
+"453
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 453: __asm("PORTC equ 0F82h");
+[; <" PORTC equ 0F82h ;# ">
+"635
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 635: __asm("PORTD equ 0F83h");
+[; <" PORTD equ 0F83h ;# ">
+"777
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 777: __asm("PORTE equ 0F84h");
+[; <" PORTE equ 0F84h ;# ">
+"980
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 980: __asm("LATA equ 0F89h");
+[; <" LATA equ 0F89h ;# ">
+"1092
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 1092: __asm("LATB equ 0F8Ah");
+[; <" LATB equ 0F8Ah ;# ">
+"1204
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 1204: __asm("LATC equ 0F8Bh");
+[; <" LATC equ 0F8Bh ;# ">
+"1316
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 1316: __asm("LATD equ 0F8Ch");
+[; <" LATD equ 0F8Ch ;# ">
+"1428
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 1428: __asm("LATE equ 0F8Dh");
+[; <" LATE equ 0F8Dh ;# ">
+"1480
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 1480: __asm("TRISA equ 0F92h");
+[; <" TRISA equ 0F92h ;# ">
+"1485
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 1485: __asm("DDRA equ 0F92h");
+[; <" DDRA equ 0F92h ;# ">
+"1702
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 1702: __asm("TRISB equ 0F93h");
+[; <" TRISB equ 0F93h ;# ">
+"1707
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 1707: __asm("DDRB equ 0F93h");
+[; <" DDRB equ 0F93h ;# ">
+"1924
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 1924: __asm("TRISC equ 0F94h");
+[; <" TRISC equ 0F94h ;# ">
+"1929
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 1929: __asm("DDRC equ 0F94h");
+[; <" DDRC equ 0F94h ;# ">
+"2146
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 2146: __asm("TRISD equ 0F95h");
+[; <" TRISD equ 0F95h ;# ">
+"2151
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 2151: __asm("DDRD equ 0F95h");
+[; <" DDRD equ 0F95h ;# ">
+"2368
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 2368: __asm("TRISE equ 0F96h");
+[; <" TRISE equ 0F96h ;# ">
+"2373
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 2373: __asm("DDRE equ 0F96h");
+[; <" DDRE equ 0F96h ;# ">
+"2532
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 2532: __asm("OSCTUNE equ 0F9Bh");
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"2597
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 2597: __asm("PIE1 equ 0F9Dh");
+[; <" PIE1 equ 0F9Dh ;# ">
+"2674
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 2674: __asm("PIR1 equ 0F9Eh");
+[; <" PIR1 equ 0F9Eh ;# ">
+"2751
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 2751: __asm("IPR1 equ 0F9Fh");
+[; <" IPR1 equ 0F9Fh ;# ">
+"2828
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 2828: __asm("PIE2 equ 0FA0h");
+[; <" PIE2 equ 0FA0h ;# ">
+"2894
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 2894: __asm("PIR2 equ 0FA1h");
+[; <" PIR2 equ 0FA1h ;# ">
+"2960
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 2960: __asm("IPR2 equ 0FA2h");
+[; <" IPR2 equ 0FA2h ;# ">
+"3026
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3026: __asm("EECON1 equ 0FA6h");
+[; <" EECON1 equ 0FA6h ;# ">
+"3092
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3092: __asm("EECON2 equ 0FA7h");
+[; <" EECON2 equ 0FA7h ;# ">
+"3099
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3099: __asm("EEDATA equ 0FA8h");
+[; <" EEDATA equ 0FA8h ;# ">
+"3106
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3106: __asm("EEADR equ 0FA9h");
+[; <" EEADR equ 0FA9h ;# ">
+"3113
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3113: __asm("RCSTA equ 0FABh");
+[; <" RCSTA equ 0FABh ;# ">
+"3118
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3118: __asm("RCSTA1 equ 0FABh");
+[; <" RCSTA1 equ 0FABh ;# ">
+"3323
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3323: __asm("TXSTA equ 0FACh");
+[; <" TXSTA equ 0FACh ;# ">
+"3328
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3328: __asm("TXSTA1 equ 0FACh");
+[; <" TXSTA1 equ 0FACh ;# ">
+"3579
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3579: __asm("TXREG equ 0FADh");
+[; <" TXREG equ 0FADh ;# ">
+"3584
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3584: __asm("TXREG1 equ 0FADh");
+[; <" TXREG1 equ 0FADh ;# ">
+"3591
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3591: __asm("RCREG equ 0FAEh");
+[; <" RCREG equ 0FAEh ;# ">
+"3596
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3596: __asm("RCREG1 equ 0FAEh");
+[; <" RCREG1 equ 0FAEh ;# ">
+"3603
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3603: __asm("SPBRG equ 0FAFh");
+[; <" SPBRG equ 0FAFh ;# ">
+"3608
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3608: __asm("SPBRG1 equ 0FAFh");
+[; <" SPBRG1 equ 0FAFh ;# ">
+"3615
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3615: __asm("SPBRGH equ 0FB0h");
+[; <" SPBRGH equ 0FB0h ;# ">
+"3622
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3622: __asm("T3CON equ 0FB1h");
+[; <" T3CON equ 0FB1h ;# ">
+"3734
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3734: __asm("TMR3 equ 0FB2h");
+[; <" TMR3 equ 0FB2h ;# ">
+"3741
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3741: __asm("TMR3L equ 0FB2h");
+[; <" TMR3L equ 0FB2h ;# ">
+"3748
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3748: __asm("TMR3H equ 0FB3h");
+[; <" TMR3H equ 0FB3h ;# ">
+"3755
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3755: __asm("CMCON equ 0FB4h");
+[; <" CMCON equ 0FB4h ;# ">
+"3845
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3845: __asm("CVRCON equ 0FB5h");
+[; <" CVRCON equ 0FB5h ;# ">
+"3924
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3924: __asm("ECCP1AS equ 0FB6h");
+[; <" ECCP1AS equ 0FB6h ;# ">
+"3929
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 3929: __asm("ECCPAS equ 0FB6h");
+[; <" ECCPAS equ 0FB6h ;# ">
+"4086
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 4086: __asm("PWM1CON equ 0FB7h");
+[; <" PWM1CON equ 0FB7h ;# ">
+"4091
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 4091: __asm("ECCP1DEL equ 0FB7h");
+[; <" ECCP1DEL equ 0FB7h ;# ">
+"4224
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 4224: __asm("BAUDCON equ 0FB8h");
+[; <" BAUDCON equ 0FB8h ;# ">
+"4229
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 4229: __asm("BAUDCTL equ 0FB8h");
+[; <" BAUDCTL equ 0FB8h ;# ">
+"4404
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 4404: __asm("CCP2CON equ 0FBAh");
+[; <" CCP2CON equ 0FBAh ;# ">
+"4483
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 4483: __asm("CCPR2 equ 0FBBh");
+[; <" CCPR2 equ 0FBBh ;# ">
+"4490
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 4490: __asm("CCPR2L equ 0FBBh");
+[; <" CCPR2L equ 0FBBh ;# ">
+"4497
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 4497: __asm("CCPR2H equ 0FBCh");
+[; <" CCPR2H equ 0FBCh ;# ">
+"4504
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 4504: __asm("CCP1CON equ 0FBDh");
+[; <" CCP1CON equ 0FBDh ;# ">
+"4601
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 4601: __asm("CCPR1 equ 0FBEh");
+[; <" CCPR1 equ 0FBEh ;# ">
+"4608
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 4608: __asm("CCPR1L equ 0FBEh");
+[; <" CCPR1L equ 0FBEh ;# ">
+"4615
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 4615: __asm("CCPR1H equ 0FBFh");
+[; <" CCPR1H equ 0FBFh ;# ">
+"4622
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 4622: __asm("ADCON2 equ 0FC0h");
+[; <" ADCON2 equ 0FC0h ;# ">
+"4693
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 4693: __asm("ADCON1 equ 0FC1h");
+[; <" ADCON1 equ 0FC1h ;# ">
+"4778
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 4778: __asm("ADCON0 equ 0FC2h");
+[; <" ADCON0 equ 0FC2h ;# ">
+"4897
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 4897: __asm("ADRES equ 0FC3h");
+[; <" ADRES equ 0FC3h ;# ">
+"4904
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 4904: __asm("ADRESL equ 0FC3h");
+[; <" ADRESL equ 0FC3h ;# ">
+"4911
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 4911: __asm("ADRESH equ 0FC4h");
+[; <" ADRESH equ 0FC4h ;# ">
+"4918
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 4918: __asm("SSPCON2 equ 0FC5h");
+[; <" SSPCON2 equ 0FC5h ;# ">
+"5013
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 5013: __asm("SSPCON1 equ 0FC6h");
+[; <" SSPCON1 equ 0FC6h ;# ">
+"5083
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 5083: __asm("SSPSTAT equ 0FC7h");
+[; <" SSPSTAT equ 0FC7h ;# ">
+"5304
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 5304: __asm("SSPADD equ 0FC8h");
+[; <" SSPADD equ 0FC8h ;# ">
+"5311
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 5311: __asm("SSPBUF equ 0FC9h");
+[; <" SSPBUF equ 0FC9h ;# ">
+"5318
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 5318: __asm("T2CON equ 0FCAh");
+[; <" T2CON equ 0FCAh ;# ">
+"5416
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 5416: __asm("PR2 equ 0FCBh");
+[; <" PR2 equ 0FCBh ;# ">
+"5421
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 5421: __asm("MEMCON equ 0FCBh");
+[; <" MEMCON equ 0FCBh ;# ">
+"5526
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 5526: __asm("TMR2 equ 0FCCh");
+[; <" TMR2 equ 0FCCh ;# ">
+"5533
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 5533: __asm("T1CON equ 0FCDh");
+[; <" T1CON equ 0FCDh ;# ">
+"5636
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 5636: __asm("TMR1 equ 0FCEh");
+[; <" TMR1 equ 0FCEh ;# ">
+"5643
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 5643: __asm("TMR1L equ 0FCEh");
+[; <" TMR1L equ 0FCEh ;# ">
+"5650
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 5650: __asm("TMR1H equ 0FCFh");
+[; <" TMR1H equ 0FCFh ;# ">
+"5657
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 5657: __asm("RCON equ 0FD0h");
+[; <" RCON equ 0FD0h ;# ">
+"5790
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 5790: __asm("WDTCON equ 0FD1h");
+[; <" WDTCON equ 0FD1h ;# ">
+"5818
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 5818: __asm("HLVDCON equ 0FD2h");
+[; <" HLVDCON equ 0FD2h ;# ">
+"5823
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 5823: __asm("LVDCON equ 0FD2h");
+[; <" LVDCON equ 0FD2h ;# ">
+"6088
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6088: __asm("OSCCON equ 0FD3h");
+[; <" OSCCON equ 0FD3h ;# ">
+"6171
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6171: __asm("T0CON equ 0FD5h");
+[; <" T0CON equ 0FD5h ;# ">
+"6254
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6254: __asm("TMR0 equ 0FD6h");
+[; <" TMR0 equ 0FD6h ;# ">
+"6261
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6261: __asm("TMR0L equ 0FD6h");
+[; <" TMR0L equ 0FD6h ;# ">
+"6268
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6268: __asm("TMR0H equ 0FD7h");
+[; <" TMR0H equ 0FD7h ;# ">
+"6275
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6275: __asm("STATUS equ 0FD8h");
+[; <" STATUS equ 0FD8h ;# ">
+"6346
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6346: __asm("FSR2 equ 0FD9h");
+[; <" FSR2 equ 0FD9h ;# ">
+"6353
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6353: __asm("FSR2L equ 0FD9h");
+[; <" FSR2L equ 0FD9h ;# ">
+"6360
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6360: __asm("FSR2H equ 0FDAh");
+[; <" FSR2H equ 0FDAh ;# ">
+"6367
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6367: __asm("PLUSW2 equ 0FDBh");
+[; <" PLUSW2 equ 0FDBh ;# ">
+"6374
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6374: __asm("PREINC2 equ 0FDCh");
+[; <" PREINC2 equ 0FDCh ;# ">
+"6381
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6381: __asm("POSTDEC2 equ 0FDDh");
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"6388
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6388: __asm("POSTINC2 equ 0FDEh");
+[; <" POSTINC2 equ 0FDEh ;# ">
+"6395
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6395: __asm("INDF2 equ 0FDFh");
+[; <" INDF2 equ 0FDFh ;# ">
+"6402
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6402: __asm("BSR equ 0FE0h");
+[; <" BSR equ 0FE0h ;# ">
+"6409
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6409: __asm("FSR1 equ 0FE1h");
+[; <" FSR1 equ 0FE1h ;# ">
+"6416
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6416: __asm("FSR1L equ 0FE1h");
+[; <" FSR1L equ 0FE1h ;# ">
+"6423
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6423: __asm("FSR1H equ 0FE2h");
+[; <" FSR1H equ 0FE2h ;# ">
+"6430
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6430: __asm("PLUSW1 equ 0FE3h");
+[; <" PLUSW1 equ 0FE3h ;# ">
+"6437
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6437: __asm("PREINC1 equ 0FE4h");
+[; <" PREINC1 equ 0FE4h ;# ">
+"6444
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6444: __asm("POSTDEC1 equ 0FE5h");
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"6451
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6451: __asm("POSTINC1 equ 0FE6h");
+[; <" POSTINC1 equ 0FE6h ;# ">
+"6458
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6458: __asm("INDF1 equ 0FE7h");
+[; <" INDF1 equ 0FE7h ;# ">
+"6465
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6465: __asm("WREG equ 0FE8h");
+[; <" WREG equ 0FE8h ;# ">
+"6477
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6477: __asm("FSR0 equ 0FE9h");
+[; <" FSR0 equ 0FE9h ;# ">
+"6484
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6484: __asm("FSR0L equ 0FE9h");
+[; <" FSR0L equ 0FE9h ;# ">
+"6491
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6491: __asm("FSR0H equ 0FEAh");
+[; <" FSR0H equ 0FEAh ;# ">
+"6498
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6498: __asm("PLUSW0 equ 0FEBh");
+[; <" PLUSW0 equ 0FEBh ;# ">
+"6505
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6505: __asm("PREINC0 equ 0FECh");
+[; <" PREINC0 equ 0FECh ;# ">
+"6512
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6512: __asm("POSTDEC0 equ 0FEDh");
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"6519
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6519: __asm("POSTINC0 equ 0FEEh");
+[; <" POSTINC0 equ 0FEEh ;# ">
+"6526
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6526: __asm("INDF0 equ 0FEFh");
+[; <" INDF0 equ 0FEFh ;# ">
+"6533
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6533: __asm("INTCON3 equ 0FF0h");
+[; <" INTCON3 equ 0FF0h ;# ">
+"6625
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6625: __asm("INTCON2 equ 0FF1h");
+[; <" INTCON2 equ 0FF1h ;# ">
+"6695
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6695: __asm("INTCON equ 0FF2h");
+[; <" INTCON equ 0FF2h ;# ">
+"6812
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6812: __asm("PROD equ 0FF3h");
+[; <" PROD equ 0FF3h ;# ">
+"6819
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6819: __asm("PRODL equ 0FF3h");
+[; <" PRODL equ 0FF3h ;# ">
+"6826
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6826: __asm("PRODH equ 0FF4h");
+[; <" PRODH equ 0FF4h ;# ">
+"6833
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6833: __asm("TABLAT equ 0FF5h");
+[; <" TABLAT equ 0FF5h ;# ">
+"6842
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6842: __asm("TBLPTR equ 0FF6h");
+[; <" TBLPTR equ 0FF6h ;# ">
+"6849
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6849: __asm("TBLPTRL equ 0FF6h");
+[; <" TBLPTRL equ 0FF6h ;# ">
+"6856
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6856: __asm("TBLPTRH equ 0FF7h");
+[; <" TBLPTRH equ 0FF7h ;# ">
+"6863
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6863: __asm("TBLPTRU equ 0FF8h");
+[; <" TBLPTRU equ 0FF8h ;# ">
+"6872
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6872: __asm("PCLAT equ 0FF9h");
+[; <" PCLAT equ 0FF9h ;# ">
+"6879
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6879: __asm("PC equ 0FF9h");
+[; <" PC equ 0FF9h ;# ">
+"6886
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6886: __asm("PCL equ 0FF9h");
+[; <" PCL equ 0FF9h ;# ">
+"6893
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6893: __asm("PCLATH equ 0FFAh");
+[; <" PCLATH equ 0FFAh ;# ">
+"6900
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6900: __asm("PCLATU equ 0FFBh");
+[; <" PCLATU equ 0FFBh ;# ">
+"6907
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6907: __asm("STKPTR equ 0FFCh");
+[; <" STKPTR equ 0FFCh ;# ">
+"6981
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6981: __asm("TOS equ 0FFDh");
+[; <" TOS equ 0FFDh ;# ">
+"6988
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6988: __asm("TOSL equ 0FFDh");
+[; <" TOSL equ 0FFDh ;# ">
+"6995
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 6995: __asm("TOSH equ 0FFEh");
+[; <" TOSH equ 0FFEh ;# ">
+"7002
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f4520.h: 7002: __asm("TOSU equ 0FFFh");
+[; <" TOSU equ 0FFFh ;# ">
+[v $root$_main `(v ~T0 @X0 0 e ]
+"23 newmain2.c
+[; ;newmain2.c: 23: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"24
+[; ;newmain2.c: 24:     unsigned int tecla = 16;
+[v _tecla `ui ~T0 @X0 1 a ]
+[e = _tecla -> -> 16 `i `ui ]
+"25
+[; ;newmain2.c: 25:     char i;
+[v _i `uc ~T0 @X0 1 a ]
+"26
+[; ;newmain2.c: 26:     float j, k;
+[v _j `f ~T0 @X0 1 a ]
+[v _k `f ~T0 @X0 1 a ]
+"28
+[; ;newmain2.c: 28:     int op = 1;
+[v _op `i ~T0 @X0 1 a ]
+[e = _op -> 1 `i ]
+"29
+[; ;newmain2.c: 29:     while (op == 1) {
+[e $U 280  ]
+[e :U 281 ]
+{
+"32
+[; ;newmain2.c: 32:         atraso_ms(2000);
+[e ( _atraso_ms (1 -> -> 2000 `i `ui ]
+[v F2929 `uc ~T0 @X0 -> 31 `i s ]
+[i F2929
+:U ..
+"33
+[; ;newmain2.c: 33:         char msg[31] = "Qual alimento\nquer cozinhar?";
+-> 81 `c
+-> 117 `c
+-> 97 `c
+-> 108 `c
+-> 32 `c
+-> 97 `c
+-> 108 `c
+-> 105 `c
+-> 109 `c
+-> 101 `c
+-> 110 `c
+-> 116 `c
+-> 111 `c
+-> 10 `c
+-> 113 `c
+-> 117 `c
+-> 101 `c
+-> 114 `c
+-> 32 `c
+-> 99 `c
+-> 111 `c
+-> 122 `c
+-> 105 `c
+-> 110 `c
+-> 104 `c
+-> 97 `c
+-> 114 `c
+-> 63 `c
+-> 0 `c
+..
+]
+[v _msg `uc ~T0 @X0 -> 31 `i a ]
+[e = _msg F2929 ]
+"34
+[; ;newmain2.c: 34:         lcdInit();
+[e ( _lcdInit ..  ]
+"35
+[; ;newmain2.c: 35:         lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"36
+[; ;newmain2.c: 36:         lcdPosition(0, 0);
+[e ( _lcdPosition (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"37
+[; ;newmain2.c: 37:         for (i = 0; i < 31; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 31 `i 283  ]
+[e $U 284  ]
+[e :U 283 ]
+{
+"38
+[; ;newmain2.c: 38:             if (strcmp(msg[i], '\n') == 0) {
+[e $ ! == ( _strcmp (2 , -> *U + &U _msg * -> _i `ux -> -> # *U &U _msg `ui `ux `*Cuc -> -> 10 `ui `*Cuc -> 0 `i 286  ]
+{
+"39
+[; ;newmain2.c: 39:                 lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"40
+[; ;newmain2.c: 40:             }
+}
+[e :U 286 ]
+"41
+[; ;newmain2.c: 41:             lcdData(msg[i]);
+[e ( _lcdData (1 -> *U + &U _msg * -> _i `ux -> -> # *U &U _msg `ui `ux `uc ]
+"42
+[; ;newmain2.c: 42:             if (i == 31) {
+[e $ ! == -> _i `i -> 31 `i 287  ]
+{
+"43
+[; ;newmain2.c: 43:                 for (k = 0; k < 150; k++);
+{
+[e = _k -> -> 0 `i `f ]
+[e $ < _k -> -> 150 `i `f 288  ]
+[e $U 289  ]
+[e :U 288 ]
+[e ++ _k -> -> 1 `i `f ]
+[e $ < _k -> -> 150 `i `f 288  ]
+[e :U 289 ]
+}
+"44
+[; ;newmain2.c: 44:             }
+}
+[e :U 287 ]
+"45
+[; ;newmain2.c: 45:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 31 `i 283  ]
+[e :U 284 ]
+}
+"48
+[; ;newmain2.c: 48:         atraso_ms(2000);
+[e ( _atraso_ms (1 -> -> 2000 `i `ui ]
+[v F2931 `uc ~T0 @X0 -> 17 `i s ]
+[i F2931
+:U ..
+"49
+[; ;newmain2.c: 49:         char fr[17] = "1-Frango        ";
+-> 49 `c
+-> 45 `c
+-> 70 `c
+-> 114 `c
+-> 97 `c
+-> 110 `c
+-> 103 `c
+-> 111 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 0 `c
+..
+]
+[v _fr `uc ~T0 @X0 -> 17 `i a ]
+[e = _fr F2931 ]
+[v F2933 `uc ~T0 @X0 -> 17 `i s ]
+[i F2933
+:U ..
+"50
+[; ;newmain2.c: 50:         char b[17] = "2-Carne Bovina  ";
+-> 50 `c
+-> 45 `c
+-> 67 `c
+-> 97 `c
+-> 114 `c
+-> 110 `c
+-> 101 `c
+-> 32 `c
+-> 66 `c
+-> 111 `c
+-> 118 `c
+-> 105 `c
+-> 110 `c
+-> 97 `c
+-> 32 `c
+-> 32 `c
+-> 0 `c
+..
+]
+[v _b `uc ~T0 @X0 -> 17 `i a ]
+[e = _b F2933 ]
+[v F2935 `uc ~T0 @X0 -> 17 `i s ]
+[i F2935
+:U ..
+"51
+[; ;newmain2.c: 51:         char f[17] = "4-Feijao        ";
+-> 52 `c
+-> 45 `c
+-> 70 `c
+-> 101 `c
+-> 105 `c
+-> 106 `c
+-> 97 `c
+-> 111 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 0 `c
+..
+]
+[v _f `uc ~T0 @X0 -> 17 `i a ]
+[e = _f F2935 ]
+[v F2937 `uc ~T0 @X0 -> 17 `i s ]
+[i F2937
+:U ..
+"52
+[; ;newmain2.c: 52:         char s[17] = "5-Carne Suina   ";
+-> 53 `c
+-> 45 `c
+-> 67 `c
+-> 97 `c
+-> 114 `c
+-> 110 `c
+-> 101 `c
+-> 32 `c
+-> 83 `c
+-> 117 `c
+-> 105 `c
+-> 110 `c
+-> 97 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 0 `c
+..
+]
+[v _s `uc ~T0 @X0 -> 17 `i a ]
+[e = _s F2937 ]
+"54
+[; ;newmain2.c: 54:         for (k = 0; k < 3000; k++);
+{
+[e = _k -> -> 0 `i `f ]
+[e $ < _k -> -> 3000 `i `f 291  ]
+[e $U 292  ]
+[e :U 291 ]
+[e ++ _k -> -> 1 `i `f ]
+[e $ < _k -> -> 3000 `i `f 291  ]
+[e :U 292 ]
+}
+"55
+[; ;newmain2.c: 55:         lcdCommand(0xF0);
+[e ( _lcdCommand (1 -> -> 240 `i `uc ]
+"56
+[; ;newmain2.c: 56:         for (i = 0; i < 17; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 17 `i 294  ]
+[e $U 295  ]
+[e :U 294 ]
+{
+"57
+[; ;newmain2.c: 57:             lcdData(fr[i]);
+[e ( _lcdData (1 -> *U + &U _fr * -> _i `ux -> -> # *U &U _fr `ui `ux `uc ]
+"58
+[; ;newmain2.c: 58:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 17 `i 294  ]
+[e :U 295 ]
+}
+"60
+[; ;newmain2.c: 60:         for (k = 0; k < 250; k++);
+{
+[e = _k -> -> 0 `i `f ]
+[e $ < _k -> -> 250 `i `f 297  ]
+[e $U 298  ]
+[e :U 297 ]
+[e ++ _k -> -> 1 `i `f ]
+[e $ < _k -> -> 250 `i `f 297  ]
+[e :U 298 ]
+}
+"61
+[; ;newmain2.c: 61:         lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"62
+[; ;newmain2.c: 62:         for (i = 0; i < 17; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 17 `i 300  ]
+[e $U 301  ]
+[e :U 300 ]
+{
+"63
+[; ;newmain2.c: 63:             lcdData(b[i]);
+[e ( _lcdData (1 -> *U + &U _b * -> _i `ux -> -> # *U &U _b `ui `ux `uc ]
+"64
+[; ;newmain2.c: 64:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 17 `i 300  ]
+[e :U 301 ]
+}
+"66
+[; ;newmain2.c: 66:         for (k = 0; k < 250; k++);
+{
+[e = _k -> -> 0 `i `f ]
+[e $ < _k -> -> 250 `i `f 303  ]
+[e $U 304  ]
+[e :U 303 ]
+[e ++ _k -> -> 1 `i `f ]
+[e $ < _k -> -> 250 `i `f 303  ]
+[e :U 304 ]
+}
+"67
+[; ;newmain2.c: 67:         lcdCommand(0x90);
+[e ( _lcdCommand (1 -> -> 144 `i `uc ]
+"68
+[; ;newmain2.c: 68:         for (i = 0; i < 17; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 17 `i 306  ]
+[e $U 307  ]
+[e :U 306 ]
+{
+"69
+[; ;newmain2.c: 69:             lcdData(f[i]);
+[e ( _lcdData (1 -> *U + &U _f * -> _i `ux -> -> # *U &U _f `ui `ux `uc ]
+"70
+[; ;newmain2.c: 70:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 17 `i 306  ]
+[e :U 307 ]
+}
+"72
+[; ;newmain2.c: 72:         for (k = 0; k < 250; k++);
+{
+[e = _k -> -> 0 `i `f ]
+[e $ < _k -> -> 250 `i `f 309  ]
+[e $U 310  ]
+[e :U 309 ]
+[e ++ _k -> -> 1 `i `f ]
+[e $ < _k -> -> 250 `i `f 309  ]
+[e :U 310 ]
+}
+"73
+[; ;newmain2.c: 73:         lcdCommand(0xD0);
+[e ( _lcdCommand (1 -> -> 208 `i `uc ]
+"74
+[; ;newmain2.c: 74:         for (i = 0; i < 17; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 17 `i 312  ]
+[e $U 313  ]
+[e :U 312 ]
+{
+"75
+[; ;newmain2.c: 75:             lcdData(s[i]);
+[e ( _lcdData (1 -> *U + &U _s * -> _i `ux -> -> # *U &U _s `ui `ux `uc ]
+"76
+[; ;newmain2.c: 76:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 17 `i 312  ]
+[e :U 313 ]
+}
+"79
+[; ;newmain2.c: 79:         escolheComida();
+[e ( _escolheComida ..  ]
+"80
+[; ;newmain2.c: 80:         abreTampa();
+[e ( _abreTampa ..  ]
+"81
+[; ;newmain2.c: 81:         escolheTempo();
+[e ( _escolheTempo ..  ]
+"82
+[; ;newmain2.c: 82:         lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"84
+[; ;newmain2.c: 84:         lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+[v F2939 `uc ~T0 @X0 -> 26 `i s ]
+[i F2939
+:U ..
+"87
+[; ;newmain2.c: 87:         char final[26] = "Deseja cozinhar\nnovamente?";
+-> 68 `c
+-> 101 `c
+-> 115 `c
+-> 101 `c
+-> 106 `c
+-> 97 `c
+-> 32 `c
+-> 99 `c
+-> 111 `c
+-> 122 `c
+-> 105 `c
+-> 110 `c
+-> 104 `c
+-> 97 `c
+-> 114 `c
+-> 10 `c
+-> 110 `c
+-> 111 `c
+-> 118 `c
+-> 97 `c
+-> 109 `c
+-> 101 `c
+-> 110 `c
+-> 116 `c
+-> 101 `c
+-> 63 `c
+..
+]
+[v _final `uc ~T0 @X0 -> 26 `i a ]
+[e = _final F2939 ]
+"88
+[; ;newmain2.c: 88:         lcdPosition(0, 0);
+[e ( _lcdPosition (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"89
+[; ;newmain2.c: 89:         for (i = 0; i < 26; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 26 `i 315  ]
+[e $U 316  ]
+[e :U 315 ]
+{
+"90
+[; ;newmain2.c: 90:             lcdData(final[i]);
+[e ( _lcdData (1 -> *U + &U _final * -> _i `ux -> -> # *U &U _final `ui `ux `uc ]
+"91
+[; ;newmain2.c: 91:             if (strcmp(final[i], '\n') == 0) {
+[e $ ! == ( _strcmp (2 , -> *U + &U _final * -> _i `ux -> -> # *U &U _final `ui `ux `*Cuc -> -> 10 `ui `*Cuc -> 0 `i 318  ]
+{
+"92
+[; ;newmain2.c: 92:                 lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"93
+[; ;newmain2.c: 93:             }
+}
+[e :U 318 ]
+"94
+[; ;newmain2.c: 94:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 26 `i 315  ]
+[e :U 316 ]
+}
+"95
+[; ;newmain2.c: 95:         atraso_ms(2000);
+[e ( _atraso_ms (1 -> -> 2000 `i `ui ]
+"96
+[; ;newmain2.c: 96:         lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+[v F2941 `uc ~T0 @X0 -> 12 `i s ]
+[i F2941
+:U ..
+"97
+[; ;newmain2.c: 97:         char final2[12] = "9-Sim \n#-Nao";
+-> 57 `c
+-> 45 `c
+-> 83 `c
+-> 105 `c
+-> 109 `c
+-> 32 `c
+-> 10 `c
+-> 35 `c
+-> 45 `c
+-> 78 `c
+-> 97 `c
+-> 111 `c
+..
+]
+[v _final2 `uc ~T0 @X0 -> 12 `i a ]
+[e = _final2 F2941 ]
+"98
+[; ;newmain2.c: 98:         lcdPosition(0, 0);
+[e ( _lcdPosition (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"99
+[; ;newmain2.c: 99:         for (i = 0; i < 12; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 12 `i 319  ]
+[e $U 320  ]
+[e :U 319 ]
+{
+"100
+[; ;newmain2.c: 100:             lcdData(final2[i]);
+[e ( _lcdData (1 -> *U + &U _final2 * -> _i `ux -> -> # *U &U _final2 `ui `ux `uc ]
+"101
+[; ;newmain2.c: 101:             if (strcmp(final2[i], '\n') == 0) {
+[e $ ! == ( _strcmp (2 , -> *U + &U _final2 * -> _i `ux -> -> # *U &U _final2 `ui `ux `*Cuc -> -> 10 `ui `*Cuc -> 0 `i 322  ]
+{
+"102
+[; ;newmain2.c: 102:                 lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"103
+[; ;newmain2.c: 103:             }
+}
+[e :U 322 ]
+"104
+[; ;newmain2.c: 104:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 12 `i 319  ]
+[e :U 320 ]
+}
+"106
+[; ;newmain2.c: 106:         kpInit();
+[e ( _kpInit ..  ]
+"107
+[; ;newmain2.c: 107:         tecla = kpRead();
+[e = _tecla ( _kpRead ..  ]
+"108
+[; ;newmain2.c: 108:         int aux2 = 1, aux3 = 1;
+[v _aux2 `i ~T0 @X0 1 a ]
+[e = _aux2 -> 1 `i ]
+[v _aux3 `i ~T0 @X0 1 a ]
+[e = _aux3 -> 1 `i ]
+"109
+[; ;newmain2.c: 109:         while (aux3 == 1) {
+[e $U 323  ]
+[e :U 324 ]
+{
+"110
+[; ;newmain2.c: 110:             kpDebounce();
+[e ( _kpDebounce ..  ]
+"111
+[; ;newmain2.c: 111:             if (kpRead() != tecla) {
+[e $ ! != ( _kpRead ..  _tecla 326  ]
+{
+"112
+[; ;newmain2.c: 112:                 tecla = kpRead();
+[e = _tecla ( _kpRead ..  ]
+"114
+[; ;newmain2.c: 114:                 if (((tecla) & (1<<(9)))) {
+[e $ ! != & _tecla -> << -> 1 `i -> 9 `i `ui -> -> 0 `i `ui 327  ]
+{
+"115
+[; ;newmain2.c: 115:                     op = 1;
+[e = _op -> 1 `i ]
+"116
+[; ;newmain2.c: 116:                     aux3 = 0;
+[e = _aux3 -> 0 `i ]
+"117
+[; ;newmain2.c: 117:                 }
+}
+[e :U 327 ]
+"119
+[; ;newmain2.c: 119:                 if (((tecla) & (1<<(8)))) {
+[e $ ! != & _tecla -> << -> 1 `i -> 8 `i `ui -> -> 0 `i `ui 328  ]
+{
+"120
+[; ;newmain2.c: 120:                     op = 0;
+[e = _op -> 0 `i ]
+"121
+[; ;newmain2.c: 121:                     aux3 = 0;
+[e = _aux3 -> 0 `i ]
+"122
+[; ;newmain2.c: 122:                 }
+}
+[e :U 328 ]
+"123
+[; ;newmain2.c: 123:             }
+}
+[e :U 326 ]
+"125
+[; ;newmain2.c: 125:         }
+}
+[e :U 323 ]
+"109
+[; ;newmain2.c: 109:         while (aux3 == 1) {
+[e $ == _aux3 -> 1 `i 324  ]
+[e :U 325 ]
+"126
+[; ;newmain2.c: 126:     }
+}
+[e :U 280 ]
+"29
+[; ;newmain2.c: 29:     while (op == 1) {
+[e $ == _op -> 1 `i 281  ]
+[e :U 282 ]
+[v F2945 `uc ~T0 @X0 -> 13 `i s ]
+[i F2945
+:U ..
+"128
+[; ;newmain2.c: 128:     char agradece[13] = "Desligando...";
+-> 68 `c
+-> 101 `c
+-> 115 `c
+-> 108 `c
+-> 105 `c
+-> 103 `c
+-> 97 `c
+-> 110 `c
+-> 100 `c
+-> 111 `c
+-> 46 `c
+-> 46 `c
+-> 46 `c
+..
+]
+[v _agradece `uc ~T0 @X0 -> 13 `i a ]
+[e = _agradece F2945 ]
+"129
+[; ;newmain2.c: 129:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"130
+[; ;newmain2.c: 130:     lcdPosition(0, 0);
+[e ( _lcdPosition (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"131
+[; ;newmain2.c: 131:     for (i = 0; i < 13; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 13 `i 329  ]
+[e $U 330  ]
+[e :U 329 ]
+{
+"132
+[; ;newmain2.c: 132:         lcdData(agradece[i]);
+[e ( _lcdData (1 -> *U + &U _agradece * -> _i `ux -> -> # *U &U _agradece `ui `ux `uc ]
+"133
+[; ;newmain2.c: 133:         if (strcmp(agradece[i], '\n') == 0) {
+[e $ ! == ( _strcmp (2 , -> *U + &U _agradece * -> _i `ux -> -> # *U &U _agradece `ui `ux `*Cuc -> -> 10 `ui `*Cuc -> 0 `i 332  ]
+{
+"134
+[; ;newmain2.c: 134:             lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"135
+[; ;newmain2.c: 135:         }
+}
+[e :U 332 ]
+"136
+[; ;newmain2.c: 136:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 13 `i 329  ]
+[e :U 330 ]
+}
+"137
+[; ;newmain2.c: 137:     for (;;) {
+{
+[e :U 333 ]
+{
+"138
+[; ;newmain2.c: 138:     }
+}
+[e $U 333  ]
+[e :U 334 ]
+}
+"139
+[; ;newmain2.c: 139: }
+[e :UE 279 ]
+}
+"141
+[; ;newmain2.c: 141: void abreTampa(void) {
+[v _abreTampa `(v ~T0 @X0 1 ef ]
+{
+[e :U _abreTampa ]
+[f ]
+"142
+[; ;newmain2.c: 142:     char k = 0, i = 0;
+[v _k `uc ~T0 @X0 1 a ]
+[e = _k -> -> 0 `i `uc ]
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+"145
+[; ;newmain2.c: 145:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"146
+[; ;newmain2.c: 146:     atraso_ms(2000);
+[e ( _atraso_ms (1 -> -> 2000 `i `ui ]
+[v F2950 `uc ~T0 @X0 -> 13 `i s ]
+[i F2950
+:U ..
+"147
+[; ;newmain2.c: 147:     char msg[13] = "Abrindo tampa";
+-> 65 `c
+-> 98 `c
+-> 114 `c
+-> 105 `c
+-> 110 `c
+-> 100 `c
+-> 111 `c
+-> 32 `c
+-> 116 `c
+-> 97 `c
+-> 109 `c
+-> 112 `c
+-> 97 `c
+..
+]
+[v _msg `uc ~T0 @X0 -> 13 `i a ]
+[e = _msg F2950 ]
+"148
+[; ;newmain2.c: 148:     for (i = 0; i < 13; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 13 `i 337  ]
+[e $U 338  ]
+[e :U 337 ]
+{
+"149
+[; ;newmain2.c: 149:         lcdData(msg[i]);
+[e ( _lcdData (1 -> *U + &U _msg * -> _i `ux -> -> # *U &U _msg `ui `ux `uc ]
+"150
+[; ;newmain2.c: 150:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 13 `i 337  ]
+[e :U 338 ]
+}
+"152
+[; ;newmain2.c: 152:     pwmInit();
+[e ( _pwmInit ..  ]
+"153
+[; ;newmain2.c: 153:     pwmSet1(32);
+[e ( _pwmSet1 (1 -> -> 32 `i `uc ]
+"154
+[; ;newmain2.c: 154:     pwmFrequency(10000);
+[e ( _pwmFrequency (1 -> -> 10000 `i `ui ]
+"155
+[; ;newmain2.c: 155:     atraso_ms(3000);
+[e ( _atraso_ms (1 -> -> 3000 `i `ui ]
+"156
+[; ;newmain2.c: 156:     pwmSet1(0);
+[e ( _pwmSet1 (1 -> -> 0 `i `uc ]
+"157
+[; ;newmain2.c: 157:     pwmFrequency(0);
+[e ( _pwmFrequency (1 -> -> 0 `i `ui ]
+"158
+[; ;newmain2.c: 158:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"159
+[; ;newmain2.c: 159:     atraso_ms(1000);
+[e ( _atraso_ms (1 -> -> 1000 `i `ui ]
+[v F2952 `uc ~T0 @X0 -> 13 `i s ]
+[i F2952
+:U ..
+"161
+[; ;newmain2.c: 161:     char msg2[13] = "Insira a agua";
+-> 73 `c
+-> 110 `c
+-> 115 `c
+-> 105 `c
+-> 114 `c
+-> 97 `c
+-> 32 `c
+-> 97 `c
+-> 32 `c
+-> 97 `c
+-> 103 `c
+-> 117 `c
+-> 97 `c
+..
+]
+[v _msg2 `uc ~T0 @X0 -> 13 `i a ]
+[e = _msg2 F2952 ]
+"162
+[; ;newmain2.c: 162:     for (i = 0; i < 13; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 13 `i 340  ]
+[e $U 341  ]
+[e :U 340 ]
+{
+"163
+[; ;newmain2.c: 163:         lcdData(msg2[i]);
+[e ( _lcdData (1 -> *U + &U _msg2 * -> _i `ux -> -> # *U &U _msg2 `ui `ux `uc ]
+"164
+[; ;newmain2.c: 164:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 13 `i 340  ]
+[e :U 341 ]
+}
+"165
+[; ;newmain2.c: 165:     atraso_ms(2000);
+[e ( _atraso_ms (1 -> -> 2000 `i `ui ]
+"166
+[; ;newmain2.c: 166:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+[v F2954 `uc ~T0 @X0 -> 14 `i s ]
+[i F2954
+:U ..
+"167
+[; ;newmain2.c: 167:     char msg3[14] = "Fechando tampa";
+-> 70 `c
+-> 101 `c
+-> 99 `c
+-> 104 `c
+-> 97 `c
+-> 110 `c
+-> 100 `c
+-> 111 `c
+-> 32 `c
+-> 116 `c
+-> 97 `c
+-> 109 `c
+-> 112 `c
+-> 97 `c
+..
+]
+[v _msg3 `uc ~T0 @X0 -> 14 `i a ]
+[e = _msg3 F2954 ]
+"168
+[; ;newmain2.c: 168:     for (i = 0; i < 14; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 14 `i 343  ]
+[e $U 344  ]
+[e :U 343 ]
+{
+"169
+[; ;newmain2.c: 169:         lcdData(msg3[i]);
+[e ( _lcdData (1 -> *U + &U _msg3 * -> _i `ux -> -> # *U &U _msg3 `ui `ux `uc ]
+"170
+[; ;newmain2.c: 170:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 14 `i 343  ]
+[e :U 344 ]
+}
+"172
+[; ;newmain2.c: 172:     pwmSet1(32);
+[e ( _pwmSet1 (1 -> -> 32 `i `uc ]
+"173
+[; ;newmain2.c: 173:     pwmFrequency(10000);
+[e ( _pwmFrequency (1 -> -> 10000 `i `ui ]
+"174
+[; ;newmain2.c: 174:     atraso_ms(3000);
+[e ( _atraso_ms (1 -> -> 3000 `i `ui ]
+"175
+[; ;newmain2.c: 175:     pwmSet1(0);
+[e ( _pwmSet1 (1 -> -> 0 `i `uc ]
+"176
+[; ;newmain2.c: 176:     pwmFrequency(0);
+[e ( _pwmFrequency (1 -> -> 0 `i `ui ]
+"177
+[; ;newmain2.c: 177:     atraso_ms(2000);
+[e ( _atraso_ms (1 -> -> 2000 `i `ui ]
+"178
+[; ;newmain2.c: 178: }
+[e :UE 336 ]
+}
+"180
+[; ;newmain2.c: 180: void escolheTempo(void) {
+[v _escolheTempo `(v ~T0 @X0 1 ef ]
+{
+[e :U _escolheTempo ]
+[f ]
+"181
+[; ;newmain2.c: 181:     unsigned int flag = 1;
+[v _flag `ui ~T0 @X0 1 a ]
+[e = _flag -> -> 1 `i `ui ]
+"182
+[; ;newmain2.c: 182:     int i = 0, k = 0;
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[v _k `i ~T0 @X0 1 a ]
+[e = _k -> 0 `i ]
+"183
+[; ;newmain2.c: 183:     unsigned int tecla = 16;
+[v _tecla `ui ~T0 @X0 1 a ]
+[e = _tecla -> -> 16 `i `ui ]
+"184
+[; ;newmain2.c: 184:     long int cont = 0;
+[v _cont `l ~T0 @X0 1 a ]
+[e = _cont -> -> 0 `i `l ]
+"185
+[; ;newmain2.c: 185:     float tempo = 0;
+[v _tempo `f ~T0 @X0 1 a ]
+[e = _tempo -> -> 0 `i `f ]
+"186
+[; ;newmain2.c: 186:     int aux = 0;
+[v _aux `i ~T0 @X0 1 a ]
+[e = _aux -> 0 `i ]
+"187
+[; ;newmain2.c: 187:     ssdInit();
+[e ( _ssdInit ..  ]
+"188
+[; ;newmain2.c: 188:     lcdInit();
+[e ( _lcdInit ..  ]
+[v F2964 `uc ~T0 @X0 -> 15 `i s ]
+[i F2964
+:U ..
+"190
+[; ;newmain2.c: 190:     char msg[15] = "Escolha o tempo";
+-> 69 `c
+-> 115 `c
+-> 99 `c
+-> 111 `c
+-> 108 `c
+-> 104 `c
+-> 97 `c
+-> 32 `c
+-> 111 `c
+-> 32 `c
+-> 116 `c
+-> 101 `c
+-> 109 `c
+-> 112 `c
+-> 111 `c
+..
+]
+[v _msg `uc ~T0 @X0 -> 15 `i a ]
+[e = _msg F2964 ]
+"191
+[; ;newmain2.c: 191:     for (i = 0; i < 15; i++) {
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 15 `i 347  ]
+[e $U 348  ]
+[e :U 347 ]
+{
+"192
+[; ;newmain2.c: 192:         lcdData(msg[i]);
+[e ( _lcdData (1 -> *U + &U _msg * -> -> _i `ui `ux -> -> # *U &U _msg `ui `ux `uc ]
+"193
+[; ;newmain2.c: 193:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 15 `i 347  ]
+[e :U 348 ]
+}
+"194
+[; ;newmain2.c: 194:     atraso_ms(2000);
+[e ( _atraso_ms (1 -> -> 2000 `i `ui ]
+"195
+[; ;newmain2.c: 195:     lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"196
+[; ;newmain2.c: 196:     lcdPosition(0, 0);
+[e ( _lcdPosition (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[v F2966 `uc ~T0 @X0 -> 21 `i s ]
+[i F2966
+:U ..
+"198
+[; ;newmain2.c: 198:     char msg2[21] = "Digite *\npara iniciar";
+-> 68 `c
+-> 105 `c
+-> 103 `c
+-> 105 `c
+-> 116 `c
+-> 101 `c
+-> 32 `c
+-> 42 `c
+-> 10 `c
+-> 112 `c
+-> 97 `c
+-> 114 `c
+-> 97 `c
+-> 32 `c
+-> 105 `c
+-> 110 `c
+-> 105 `c
+-> 99 `c
+-> 105 `c
+-> 97 `c
+-> 114 `c
+..
+]
+[v _msg2 `uc ~T0 @X0 -> 21 `i a ]
+[e = _msg2 F2966 ]
+"199
+[; ;newmain2.c: 199:     for (i = 0; i < 21; i++) {
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 21 `i 350  ]
+[e $U 351  ]
+[e :U 350 ]
+{
+"200
+[; ;newmain2.c: 200:         lcdData(msg2[i]);
+[e ( _lcdData (1 -> *U + &U _msg2 * -> -> _i `ui `ux -> -> # *U &U _msg2 `ui `ux `uc ]
+"201
+[; ;newmain2.c: 201:         if (strcmp(msg2[i], '\n') == 0) {
+[e $ ! == ( _strcmp (2 , -> *U + &U _msg2 * -> -> _i `ui `ux -> -> # *U &U _msg2 `ui `ux `*Cuc -> -> 10 `ui `*Cuc -> 0 `i 353  ]
+{
+"202
+[; ;newmain2.c: 202:             lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"203
+[; ;newmain2.c: 203:         }
+}
+[e :U 353 ]
+"204
+[; ;newmain2.c: 204:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 21 `i 350  ]
+[e :U 351 ]
+}
+"205
+[; ;newmain2.c: 205:     lcdPosition(2, 0);
+[e ( _lcdPosition (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+[v F2968 `uc ~T0 @X0 -> 28 `i s ]
+[i F2968
+:U ..
+"207
+[; ;newmain2.c: 207:     char msg3[28] = "4- +1m 5- -1m\n7- +1s  8- -1s";
+-> 52 `c
+-> 45 `c
+-> 32 `c
+-> 43 `c
+-> 49 `c
+-> 109 `c
+-> 32 `c
+-> 53 `c
+-> 45 `c
+-> 32 `c
+-> 45 `c
+-> 49 `c
+-> 109 `c
+-> 10 `c
+-> 55 `c
+-> 45 `c
+-> 32 `c
+-> 43 `c
+-> 49 `c
+-> 115 `c
+-> 32 `c
+-> 32 `c
+-> 56 `c
+-> 45 `c
+-> 32 `c
+-> 45 `c
+-> 49 `c
+-> 115 `c
+..
+]
+[v _msg3 `uc ~T0 @X0 -> 28 `i a ]
+[e = _msg3 F2968 ]
+"208
+[; ;newmain2.c: 208:     for (i = 0; i < 28; i++) {
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 28 `i 354  ]
+[e $U 355  ]
+[e :U 354 ]
+{
+"209
+[; ;newmain2.c: 209:         lcdData(msg3[i]);
+[e ( _lcdData (1 -> *U + &U _msg3 * -> -> _i `ui `ux -> -> # *U &U _msg3 `ui `ux `uc ]
+"210
+[; ;newmain2.c: 210:         if (strcmp(msg3[i], '\n') == 0) {
+[e $ ! == ( _strcmp (2 , -> *U + &U _msg3 * -> -> _i `ui `ux -> -> # *U &U _msg3 `ui `ux `*Cuc -> -> 10 `ui `*Cuc -> 0 `i 357  ]
+{
+"211
+[; ;newmain2.c: 211:             lcdPosition(3, 0);
+[e ( _lcdPosition (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"212
+[; ;newmain2.c: 212:         }
+}
+[e :U 357 ]
+"213
+[; ;newmain2.c: 213:     }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 28 `i 354  ]
+[e :U 355 ]
+}
+"215
+[; ;newmain2.c: 215:     while (aux != 1) {
+[e $U 358  ]
+[e :U 359 ]
+{
+"217
+[; ;newmain2.c: 217:         ssdDigit(((cont / 60000) % 6), 0);
+[e ( _ssdDigit (2 , -> % / _cont -> 60000 `l -> -> 6 `i `l `uc -> -> 0 `i `uc ]
+"218
+[; ;newmain2.c: 218:         ssdDigit(((cont / 6000) % 10), 1);
+[e ( _ssdDigit (2 , -> % / _cont -> -> 6000 `i `l -> -> 10 `i `l `uc -> -> 1 `i `uc ]
+"219
+[; ;newmain2.c: 219:         ssdDigit(((cont / 1000) % 6), 2);
+[e ( _ssdDigit (2 , -> % / _cont -> -> 1000 `i `l -> -> 6 `i `l `uc -> -> 2 `i `uc ]
+"220
+[; ;newmain2.c: 220:         ssdDigit(((cont / 100) % 10), 3);
+[e ( _ssdDigit (2 , -> % / _cont -> -> 100 `i `l -> -> 10 `i `l `uc -> -> 3 `i `uc ]
+"221
+[; ;newmain2.c: 221:         ssdUpdate();
+[e ( _ssdUpdate ..  ]
+"222
+[; ;newmain2.c: 222:         for (tempo = 0; tempo < 3; tempo++);
+{
+[e = _tempo -> -> 0 `i `f ]
+[e $ < _tempo -> -> 3 `i `f 361  ]
+[e $U 362  ]
+[e :U 361 ]
+[e ++ _tempo -> -> 1 `i `f ]
+[e $ < _tempo -> -> 3 `i `f 361  ]
+[e :U 362 ]
+}
+"224
+[; ;newmain2.c: 224:         kpInit();
+[e ( _kpInit ..  ]
+"225
+[; ;newmain2.c: 225:         kpDebounce();
+[e ( _kpDebounce ..  ]
+"227
+[; ;newmain2.c: 227:         if (kpRead() != tecla) {
+[e $ ! != ( _kpRead ..  _tecla 364  ]
+{
+"228
+[; ;newmain2.c: 228:             tecla = kpRead();
+[e = _tecla ( _kpRead ..  ]
+"230
+[; ;newmain2.c: 230:             if (((tecla) & (1<<(2)))&& (flag == 0)) {
+[e $ ! && != & _tecla -> << -> 1 `i -> 2 `i `ui -> -> 0 `i `ui == _flag -> -> 0 `i `ui 365  ]
+{
+"231
+[; ;newmain2.c: 231:                 cont = cont + 6000;
+[e = _cont + _cont -> -> 6000 `i `l ]
+"232
+[; ;newmain2.c: 232:             }
+}
+[e :U 365 ]
+"234
+[; ;newmain2.c: 234:             if (((tecla) & (1<<(6)))&& (flag == 0)) {
+[e $ ! && != & _tecla -> << -> 1 `i -> 6 `i `ui -> -> 0 `i `ui == _flag -> -> 0 `i `ui 366  ]
+{
+"235
+[; ;newmain2.c: 235:                 cont = cont - 6000;
+[e = _cont - _cont -> -> 6000 `i `l ]
+"236
+[; ;newmain2.c: 236:             }
+}
+[e :U 366 ]
+"238
+[; ;newmain2.c: 238:             if (((tecla) & (1<<(1)))&& (flag == 0)) {
+[e $ ! && != & _tecla -> << -> 1 `i -> 1 `i `ui -> -> 0 `i `ui == _flag -> -> 0 `i `ui 367  ]
+{
+"239
+[; ;newmain2.c: 239:                 cont = cont + 100;
+[e = _cont + _cont -> -> 100 `i `l ]
+"240
+[; ;newmain2.c: 240:             }
+}
+[e :U 367 ]
+"242
+[; ;newmain2.c: 242:             if (((tecla) & (1<<(5)))&& (flag == 0)) {
+[e $ ! && != & _tecla -> << -> 1 `i -> 5 `i `ui -> -> 0 `i `ui == _flag -> -> 0 `i `ui 368  ]
+{
+"243
+[; ;newmain2.c: 243:                 cont = cont - 100;
+[e = _cont - _cont -> -> 100 `i `l ]
+"244
+[; ;newmain2.c: 244:             }
+}
+[e :U 368 ]
+"246
+[; ;newmain2.c: 246:             if (((tecla) & (1<<(0)))&& (flag == 0)) {
+[e $ ! && != & _tecla -> << -> 1 `i -> 0 `i `ui -> -> 0 `i `ui == _flag -> -> 0 `i `ui 369  ]
+{
+"247
+[; ;newmain2.c: 247:                 aux = 1;
+[e = _aux -> 1 `i ]
+"248
+[; ;newmain2.c: 248:                 lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+[v F2970 `uc ~T0 @X0 -> 64 `i s ]
+[i F2970
+:U ..
+"249
+[; ;newmain2.c: 249:                 unsigned char foguinho[64] = {
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 2 `i `uc
+-> -> 2 `i `uc
+-> -> 6 `i `uc
+-> -> 6 `i `uc
+-> -> 2 `i `uc
+-> -> 2 `i `uc
+-> -> 8 `i `uc
+-> -> 12 `i `uc
+-> -> 10 `i `uc
+-> -> 9 `i `uc
+-> -> 5 `i `uc
+-> -> 21 `i `uc
+-> -> 25 `i `uc
+-> -> 10 `i `uc
+-> -> 0 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 2 `i `uc
+-> -> 2 `i `uc
+-> -> 6 `i `uc
+-> -> 10 `i `uc
+-> -> 9 `i `uc
+-> -> 8 `i `uc
+-> -> 6 `i `uc
+-> -> 1 `i `uc
+-> -> 10 `i `uc
+-> -> 10 `i `uc
+-> -> 9 `i `uc
+-> -> 17 `i `uc
+-> -> 17 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 31 `i `uc
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+-> -> 4 `i `uc
+-> -> 10 `i `uc
+-> -> 18 `i `uc
+-> -> 2 `i `uc
+-> -> 4 `i `uc
+-> -> 24 `i `uc
+..
+]
+[v _foguinho `uc ~T0 @X0 -> 64 `i a ]
+[e = _foguinho F2970 ]
+"259
+[; ;newmain2.c: 259:                 lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"260
+[; ;newmain2.c: 260:                 lcdCommand(0x40);
+[e ( _lcdCommand (1 -> -> 64 `i `uc ]
+"261
+[; ;newmain2.c: 261:                 for (i = 0; i <= 64; i++) {
+{
+[e = _i -> 0 `i ]
+[e $ <= _i -> 64 `i 370  ]
+[e $U 371  ]
+[e :U 370 ]
+{
+"262
+[; ;newmain2.c: 262:                     lcdData(foguinho[i]);
+[e ( _lcdData (1 *U + &U _foguinho * -> -> _i `ui `ux -> -> # *U &U _foguinho `ui `ux ]
+"263
+[; ;newmain2.c: 263:                 }
+}
+[e ++ _i -> 1 `i ]
+[e $ <= _i -> 64 `i 370  ]
+[e :U 371 ]
+}
+"264
+[; ;newmain2.c: 264:                 lcdPosition(1, 6);
+[e ( _lcdPosition (2 , -> -> 1 `i `uc -> -> 6 `i `uc ]
+"265
+[; ;newmain2.c: 265:                 lcdData(0);
+[e ( _lcdData (1 -> -> 0 `i `uc ]
+"266
+[; ;newmain2.c: 266:                 lcdData(1);
+[e ( _lcdData (1 -> -> 1 `i `uc ]
+"267
+[; ;newmain2.c: 267:                 lcdData(2);
+[e ( _lcdData (1 -> -> 2 `i `uc ]
+"268
+[; ;newmain2.c: 268:                 lcdPosition(2, 6);
+[e ( _lcdPosition (2 , -> -> 2 `i `uc -> -> 6 `i `uc ]
+"269
+[; ;newmain2.c: 269:                 lcdData(3);
+[e ( _lcdData (1 -> -> 3 `i `uc ]
+"270
+[; ;newmain2.c: 270:                 lcdData(4);
+[e ( _lcdData (1 -> -> 4 `i `uc ]
+"271
+[; ;newmain2.c: 271:                 lcdData(5);
+[e ( _lcdData (1 -> -> 5 `i `uc ]
+"272
+[; ;newmain2.c: 272:             }
+}
+[e :U 369 ]
+"273
+[; ;newmain2.c: 273:         }
+}
+[e :U 364 ]
+"274
+[; ;newmain2.c: 274:         flag = 0;
+[e = _flag -> -> 0 `i `ui ]
+"275
+[; ;newmain2.c: 275:     }
+}
+[e :U 358 ]
+"215
+[; ;newmain2.c: 215:     while (aux != 1) {
+[e $ != _aux -> 1 `i 359  ]
+[e :U 360 ]
+"278
+[; ;newmain2.c: 278:     while (cont > 0) {
+[e $U 373  ]
+[e :U 374 ]
+{
+"280
+[; ;newmain2.c: 280:         pwmSet1(32);
+[e ( _pwmSet1 (1 -> -> 32 `i `uc ]
+"281
+[; ;newmain2.c: 281:         pwmFrequency(10000);
+[e ( _pwmFrequency (1 -> -> 10000 `i `ui ]
+"284
+[; ;newmain2.c: 284:         kpDebounce();
+[e ( _kpDebounce ..  ]
+"285
+[; ;newmain2.c: 285:         cont--;
+[e -- _cont -> -> 1 `i `l ]
+"286
+[; ;newmain2.c: 286:         ssdDigit(((cont / 60000) % 6), 0);
+[e ( _ssdDigit (2 , -> % / _cont -> 60000 `l -> -> 6 `i `l `uc -> -> 0 `i `uc ]
+"287
+[; ;newmain2.c: 287:         ssdDigit(((cont / 6000) % 10), 1);
+[e ( _ssdDigit (2 , -> % / _cont -> -> 6000 `i `l -> -> 10 `i `l `uc -> -> 1 `i `uc ]
+"288
+[; ;newmain2.c: 288:         ssdDigit(((cont / 1000) % 6), 2);
+[e ( _ssdDigit (2 , -> % / _cont -> -> 1000 `i `l -> -> 6 `i `l `uc -> -> 2 `i `uc ]
+"289
+[; ;newmain2.c: 289:         ssdDigit(((cont / 100) % 10), 3);
+[e ( _ssdDigit (2 , -> % / _cont -> -> 100 `i `l -> -> 10 `i `l `uc -> -> 3 `i `uc ]
+"290
+[; ;newmain2.c: 290:         ssdUpdate();
+[e ( _ssdUpdate ..  ]
+"291
+[; ;newmain2.c: 291:         for (tempo = 0; tempo < 15; tempo++);
+{
+[e = _tempo -> -> 0 `i `f ]
+[e $ < _tempo -> -> 15 `i `f 376  ]
+[e $U 377  ]
+[e :U 376 ]
+[e ++ _tempo -> -> 1 `i `f ]
+[e $ < _tempo -> -> 15 `i `f 376  ]
+[e :U 377 ]
+}
+"294
+[; ;newmain2.c: 294:         if (kpRead() != tecla) {
+[e $ ! != ( _kpRead ..  _tecla 379  ]
+{
+"295
+[; ;newmain2.c: 295:             tecla = kpRead();
+[e = _tecla ( _kpRead ..  ]
+"297
+[; ;newmain2.c: 297:             if (((tecla) & (1<<(2)))) {
+[e $ ! != & _tecla -> << -> 1 `i -> 2 `i `ui -> -> 0 `i `ui 380  ]
+{
+"298
+[; ;newmain2.c: 298:                 cont = cont + 6000;
+[e = _cont + _cont -> -> 6000 `i `l ]
+"299
+[; ;newmain2.c: 299:             }
+}
+[e :U 380 ]
+"300
+[; ;newmain2.c: 300:             if (((tecla) & (1<<(6)))) {
+[e $ ! != & _tecla -> << -> 1 `i -> 6 `i `ui -> -> 0 `i `ui 381  ]
+{
+"301
+[; ;newmain2.c: 301:                 cont = cont - 6000;
+[e = _cont - _cont -> -> 6000 `i `l ]
+"302
+[; ;newmain2.c: 302:             }
+}
+[e :U 381 ]
+"303
+[; ;newmain2.c: 303:             if (((tecla) & (1<<(1)))) {
+[e $ ! != & _tecla -> << -> 1 `i -> 1 `i `ui -> -> 0 `i `ui 382  ]
+{
+"304
+[; ;newmain2.c: 304:                 cont = cont + 100;
+[e = _cont + _cont -> -> 100 `i `l ]
+"305
+[; ;newmain2.c: 305:             }
+}
+[e :U 382 ]
+"306
+[; ;newmain2.c: 306:             if (((tecla) & (1<<(5)))) {
+[e $ ! != & _tecla -> << -> 1 `i -> 5 `i `ui -> -> 0 `i `ui 383  ]
+{
+"307
+[; ;newmain2.c: 307:                 cont = cont - 100;
+[e = _cont - _cont -> -> 100 `i `l ]
+"308
+[; ;newmain2.c: 308:             }
+}
+[e :U 383 ]
+"309
+[; ;newmain2.c: 309:         }
+}
+[e :U 379 ]
+"310
+[; ;newmain2.c: 310:     }
+}
+[e :U 373 ]
+"278
+[; ;newmain2.c: 278:     while (cont > 0) {
+[e $ > _cont -> -> 0 `i `l 374  ]
+[e :U 375 ]
+"313
+[; ;newmain2.c: 313:     if (cont == 0) {
+[e $ ! == _cont -> -> 0 `i `l 384  ]
+{
+"315
+[; ;newmain2.c: 315:         lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"316
+[; ;newmain2.c: 316:         pwmSet1(0);
+[e ( _pwmSet1 (1 -> -> 0 `i `uc ]
+"317
+[; ;newmain2.c: 317:         pwmFrequency(0);
+[e ( _pwmFrequency (1 -> -> 0 `i `ui ]
+"320
+[; ;newmain2.c: 320:         for (i = 0; i < 10; i++) {
+{
+[e = _i -> 0 `i ]
+[e $ < _i -> 10 `i 385  ]
+[e $U 386  ]
+[e :U 385 ]
+{
+"321
+[; ;newmain2.c: 321:             ((TRISC) |= (1<<(1)));
+[e =| _TRISC -> << -> 1 `i -> 1 `i `Vuc ]
+"322
+[; ;newmain2.c: 322:             PORTB = i;
+[e = _PORTB -> _i `uc ]
+"323
+[; ;newmain2.c: 323:             PORTD = i;
+[e = _PORTD -> _i `uc ]
+"324
+[; ;newmain2.c: 324:             atraso_ms(50);
+[e ( _atraso_ms (1 -> -> 50 `i `ui ]
+"325
+[; ;newmain2.c: 325:         }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 10 `i 385  ]
+[e :U 386 ]
+}
+"326
+[; ;newmain2.c: 326:         ((TRISC) &= ~(1<<(1)));
+[e =& _TRISC -> ~ << -> 1 `i -> 1 `i `Vuc ]
+"329
+[; ;newmain2.c: 329:         PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
+"330
+[; ;newmain2.c: 330:         PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"331
+[; ;newmain2.c: 331:         lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"332
+[; ;newmain2.c: 332:     }
+}
+[e :U 384 ]
+"334
+[; ;newmain2.c: 334: }
+[e :UE 346 ]
+}
+"336
+[; ;newmain2.c: 336: void escolheComida(void) {
+[v _escolheComida `(v ~T0 @X0 1 ef ]
+{
+[e :U _escolheComida ]
+[f ]
+"337
+[; ;newmain2.c: 337:     unsigned int tecla = 16;
+[v _tecla `ui ~T0 @X0 1 a ]
+[e = _tecla -> -> 16 `i `ui ]
+"338
+[; ;newmain2.c: 338:     char i = 0, k = 0;
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[v _k `uc ~T0 @X0 1 a ]
+[e = _k -> -> 0 `i `uc ]
+"339
+[; ;newmain2.c: 339:     int aux = 1;
+[v _aux `i ~T0 @X0 1 a ]
+[e = _aux -> 1 `i ]
+"340
+[; ;newmain2.c: 340:     unsigned int flag = 1;
+[v _flag `ui ~T0 @X0 1 a ]
+[e = _flag -> -> 1 `i `ui ]
+"341
+[; ;newmain2.c: 341:     kpInit();
+[e ( _kpInit ..  ]
+"342
+[; ;newmain2.c: 342:     tecla = kpRead();
+[e = _tecla ( _kpRead ..  ]
+"344
+[; ;newmain2.c: 344:     while (aux != 0) {
+[e $U 389  ]
+[e :U 390 ]
+{
+"345
+[; ;newmain2.c: 345:         kpDebounce();
+[e ( _kpDebounce ..  ]
+"347
+[; ;newmain2.c: 347:         if (tecla != kpRead) {
+[e $ ! != -> _tecla `*F2978 &U _kpRead 392  ]
+{
+"348
+[; ;newmain2.c: 348:             tecla = kpRead();
+[e = _tecla ( _kpRead ..  ]
+"349
+[; ;newmain2.c: 349:             if (((tecla) & (1<<(3)))&& (flag == 0)) {
+[e $ ! && != & _tecla -> << -> 1 `i -> 3 `i `ui -> -> 0 `i `ui == _flag -> -> 0 `i `ui 393  ]
+{
+"350
+[; ;newmain2.c: 350:                 lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"351
+[; ;newmain2.c: 351:                 lcdCommand(0xF0);
+[e ( _lcdCommand (1 -> -> 240 `i `uc ]
+[v F2980 `uc ~T0 @X0 -> 19 `i s ]
+[i F2980
+:U ..
+"353
+[; ;newmain2.c: 353:                 char msg3[19] = "Escolhido:\nFrango";
+-> 69 `c
+-> 115 `c
+-> 99 `c
+-> 111 `c
+-> 108 `c
+-> 104 `c
+-> 105 `c
+-> 100 `c
+-> 111 `c
+-> 58 `c
+-> 10 `c
+-> 70 `c
+-> 114 `c
+-> 97 `c
+-> 110 `c
+-> 103 `c
+-> 111 `c
+-> 0 `c
+..
+]
+[v _msg3 `uc ~T0 @X0 -> 19 `i a ]
+[e = _msg3 F2980 ]
+"354
+[; ;newmain2.c: 354:                 for (i = 0; i < 19; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 19 `i 394  ]
+[e $U 395  ]
+[e :U 394 ]
+{
+"355
+[; ;newmain2.c: 355:                     lcdData(msg3[i]);
+[e ( _lcdData (1 -> *U + &U _msg3 * -> _i `ux -> -> # *U &U _msg3 `ui `ux `uc ]
+"356
+[; ;newmain2.c: 356:                     if (strcmp(msg3[i], '\n') == 0) {
+[e $ ! == ( _strcmp (2 , -> *U + &U _msg3 * -> _i `ux -> -> # *U &U _msg3 `ui `ux `*Cuc -> -> 10 `ui `*Cuc -> 0 `i 397  ]
+{
+"357
+[; ;newmain2.c: 357:                         lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"358
+[; ;newmain2.c: 358:                     }
+}
+[e :U 397 ]
+"360
+[; ;newmain2.c: 360:                 }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 19 `i 394  ]
+[e :U 395 ]
+}
+"362
+[; ;newmain2.c: 362:                 atraso_ms(2000);
+[e ( _atraso_ms (1 -> -> 2000 `i `ui ]
+"363
+[; ;newmain2.c: 363:                 lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"364
+[; ;newmain2.c: 364:                 lcdPosition(0, 0);
+[e ( _lcdPosition (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"365
+[; ;newmain2.c: 365:                 aux = 0;
+[e = _aux -> 0 `i ]
+"366
+[; ;newmain2.c: 366:             }
+}
+[e :U 393 ]
+"367
+[; ;newmain2.c: 367:             if (((tecla) & (1<<(7)))&& (flag == 0)) {
+[e $ ! && != & _tecla -> << -> 1 `i -> 7 `i `ui -> -> 0 `i `ui == _flag -> -> 0 `i `ui 398  ]
+{
+"369
+[; ;newmain2.c: 369:                 lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"370
+[; ;newmain2.c: 370:                 lcdCommand(0xF0);
+[e ( _lcdCommand (1 -> -> 240 `i `uc ]
+[v F2982 `uc ~T0 @X0 -> 24 `i s ]
+[i F2982
+:U ..
+"372
+[; ;newmain2.c: 372:                 char msg3[24] = "Escolhido:\nCarne Bovina";
+-> 69 `c
+-> 115 `c
+-> 99 `c
+-> 111 `c
+-> 108 `c
+-> 104 `c
+-> 105 `c
+-> 100 `c
+-> 111 `c
+-> 58 `c
+-> 10 `c
+-> 67 `c
+-> 97 `c
+-> 114 `c
+-> 110 `c
+-> 101 `c
+-> 32 `c
+-> 66 `c
+-> 111 `c
+-> 118 `c
+-> 105 `c
+-> 110 `c
+-> 97 `c
+-> 0 `c
+..
+]
+[v _msg3 `uc ~T0 @X0 -> 24 `i a ]
+[e = _msg3 F2982 ]
+"373
+[; ;newmain2.c: 373:                 for (i = 0; i < 24; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 24 `i 399  ]
+[e $U 400  ]
+[e :U 399 ]
+{
+"374
+[; ;newmain2.c: 374:                     lcdData(msg3[i]);
+[e ( _lcdData (1 -> *U + &U _msg3 * -> _i `ux -> -> # *U &U _msg3 `ui `ux `uc ]
+"375
+[; ;newmain2.c: 375:                     if (strcmp(msg3[i], '\n') == 0) {
+[e $ ! == ( _strcmp (2 , -> *U + &U _msg3 * -> _i `ux -> -> # *U &U _msg3 `ui `ux `*Cuc -> -> 10 `ui `*Cuc -> 0 `i 402  ]
+{
+"376
+[; ;newmain2.c: 376:                         lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"377
+[; ;newmain2.c: 377:                     }
+}
+[e :U 402 ]
+"379
+[; ;newmain2.c: 379:                 }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 24 `i 399  ]
+[e :U 400 ]
+}
+"381
+[; ;newmain2.c: 381:                 atraso_ms(2000);
+[e ( _atraso_ms (1 -> -> 2000 `i `ui ]
+"382
+[; ;newmain2.c: 382:                 lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"383
+[; ;newmain2.c: 383:                 lcdPosition(0, 0);
+[e ( _lcdPosition (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"384
+[; ;newmain2.c: 384:                 aux = 0;
+[e = _aux -> 0 `i ]
+"386
+[; ;newmain2.c: 386:             }
+}
+[e :U 398 ]
+"387
+[; ;newmain2.c: 387:             if (((tecla) & (1<<(2)))&& (flag == 0)) {
+[e $ ! && != & _tecla -> << -> 1 `i -> 2 `i `ui -> -> 0 `i `ui == _flag -> -> 0 `i `ui 403  ]
+{
+"389
+[; ;newmain2.c: 389:                 lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"390
+[; ;newmain2.c: 390:                 lcdCommand(0xF0);
+[e ( _lcdCommand (1 -> -> 240 `i `uc ]
+[v F2984 `uc ~T0 @X0 -> 19 `i s ]
+[i F2984
+:U ..
+"391
+[; ;newmain2.c: 391:                 char msg3[19] = "Escolhido:\nFeijao";
+-> 69 `c
+-> 115 `c
+-> 99 `c
+-> 111 `c
+-> 108 `c
+-> 104 `c
+-> 105 `c
+-> 100 `c
+-> 111 `c
+-> 58 `c
+-> 10 `c
+-> 70 `c
+-> 101 `c
+-> 105 `c
+-> 106 `c
+-> 97 `c
+-> 111 `c
+-> 0 `c
+..
+]
+[v _msg3 `uc ~T0 @X0 -> 19 `i a ]
+[e = _msg3 F2984 ]
+"392
+[; ;newmain2.c: 392:                 for (i = 0; i < 19; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 19 `i 404  ]
+[e $U 405  ]
+[e :U 404 ]
+{
+"393
+[; ;newmain2.c: 393:                     lcdData(msg3[i]);
+[e ( _lcdData (1 -> *U + &U _msg3 * -> _i `ux -> -> # *U &U _msg3 `ui `ux `uc ]
+"394
+[; ;newmain2.c: 394:                     if (strcmp(msg3[i], '\n') == 0) {
+[e $ ! == ( _strcmp (2 , -> *U + &U _msg3 * -> _i `ux -> -> # *U &U _msg3 `ui `ux `*Cuc -> -> 10 `ui `*Cuc -> 0 `i 407  ]
+{
+"395
+[; ;newmain2.c: 395:                         lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"396
+[; ;newmain2.c: 396:                     }
+}
+[e :U 407 ]
+"397
+[; ;newmain2.c: 397:                 }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 19 `i 404  ]
+[e :U 405 ]
+}
+"399
+[; ;newmain2.c: 399:                 atraso_ms(2000);
+[e ( _atraso_ms (1 -> -> 2000 `i `ui ]
+"400
+[; ;newmain2.c: 400:                 lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"401
+[; ;newmain2.c: 401:                 lcdPosition(0, 0);
+[e ( _lcdPosition (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"402
+[; ;newmain2.c: 402:                 aux = 0;
+[e = _aux -> 0 `i ]
+"403
+[; ;newmain2.c: 403:             }
+}
+[e :U 403 ]
+"404
+[; ;newmain2.c: 404:             if (((tecla) & (1<<(6)))&& (flag == 0)) {
+[e $ ! && != & _tecla -> << -> 1 `i -> 6 `i `ui -> -> 0 `i `ui == _flag -> -> 0 `i `ui 408  ]
+{
+"406
+[; ;newmain2.c: 406:                 lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"407
+[; ;newmain2.c: 407:                 lcdCommand(0xF0);
+[e ( _lcdCommand (1 -> -> 240 `i `uc ]
+[v F2986 `uc ~T0 @X0 -> 23 `i s ]
+[i F2986
+:U ..
+"409
+[; ;newmain2.c: 409:                 char msg3[23] = "Escolhido:\nCarne Suina";
+-> 69 `c
+-> 115 `c
+-> 99 `c
+-> 111 `c
+-> 108 `c
+-> 104 `c
+-> 105 `c
+-> 100 `c
+-> 111 `c
+-> 58 `c
+-> 10 `c
+-> 67 `c
+-> 97 `c
+-> 114 `c
+-> 110 `c
+-> 101 `c
+-> 32 `c
+-> 83 `c
+-> 117 `c
+-> 105 `c
+-> 110 `c
+-> 97 `c
+-> 0 `c
+..
+]
+[v _msg3 `uc ~T0 @X0 -> 23 `i a ]
+[e = _msg3 F2986 ]
+"410
+[; ;newmain2.c: 410:                 for (i = 0; i < 23; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 23 `i 409  ]
+[e $U 410  ]
+[e :U 409 ]
+{
+"411
+[; ;newmain2.c: 411:                     lcdData(msg3[i]);
+[e ( _lcdData (1 -> *U + &U _msg3 * -> _i `ux -> -> # *U &U _msg3 `ui `ux `uc ]
+"412
+[; ;newmain2.c: 412:                     if (strcmp(msg3[i], '\n') == 0) {
+[e $ ! == ( _strcmp (2 , -> *U + &U _msg3 * -> _i `ux -> -> # *U &U _msg3 `ui `ux `*Cuc -> -> 10 `ui `*Cuc -> 0 `i 412  ]
+{
+"413
+[; ;newmain2.c: 413:                         lcdCommand(0xC0);
+[e ( _lcdCommand (1 -> -> 192 `i `uc ]
+"414
+[; ;newmain2.c: 414:                     }
+}
+[e :U 412 ]
+"416
+[; ;newmain2.c: 416:                 }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 23 `i 409  ]
+[e :U 410 ]
+}
+"418
+[; ;newmain2.c: 418:                 atraso_ms(2000);
+[e ( _atraso_ms (1 -> -> 2000 `i `ui ]
+"419
+[; ;newmain2.c: 419:                 lcdCommand(0x01);
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+"420
+[; ;newmain2.c: 420:                 lcdPosition(0, 0);
+[e ( _lcdPosition (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"421
+[; ;newmain2.c: 421:                 aux = 0;
+[e = _aux -> 0 `i ]
+"423
+[; ;newmain2.c: 423:             }
+}
+[e :U 408 ]
+"425
+[; ;newmain2.c: 425:         }
+}
+[e :U 392 ]
+"426
+[; ;newmain2.c: 426:         flag = 0;
+[e = _flag -> -> 0 `i `ui ]
+"427
+[; ;newmain2.c: 427:     }
+}
+[e :U 389 ]
+"344
+[; ;newmain2.c: 344:     while (aux != 0) {
+[e $ != _aux -> 0 `i 390  ]
+[e :U 391 ]
+"429
+[; ;newmain2.c: 429: }
+[e :UE 388 ]
+}
